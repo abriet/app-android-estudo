@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    LinearLayout (não pode esquecer do orientation=[vertical ou horizontal]) - foi a que mais utilizamos até o momento. Onde é empilhado os objetos um embaixo do outro
+    ou um ao lado do outro.
+
+    res/strings.xml - é o arquivo onde deve ficar todas as strings do aplicadtimo
+    res/styles.xml - é a onde você pode fazer a personalização de items do aplicativo.
+    res/colors.xml - é a onde armazena todas as cores utilizadas para o desgin do app.
+    res/dimens.xml - é a onde se armazena todas as dimenções do aplicativo (tamanhos de botões, imagens...)
+    dp (é o prefixo para tamanho de objetos ex: 20dp)
+    sp (é o prefixo para o tamanho de fontes ex: 12sp)
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="br.com.fiap.segundotina.app_android_estudo.MainActivity">
+
+
+    <!--TODA CLASSE UTILIZADA NO XML POSSUI UMA CLASE NO JAVA (o arquivo java referente a esta activity)-->
+
+    <!-- match_parent(100%)   wrap_content(até a onde o objeto precisa)-->
+
+    <!--
+   ATRIBUTOS
+
+   singleLine - Para forçar o conteudo em apenas uma linha
+   inputType - Para determinar o tipo do input (ex: textPassword).
+
+    id - é para determinar um ID para o objeto(Button, EditText,....) para poder localizar na classe do java.
+
+
+    onClick - é a ação que você vai colocar em um botão!
+
+   layout_weight - determina o peso de um objeto fazendo com que ele fique maior que o outro.
+   -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usuario" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:id="@+id/edtUsuario"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/senha" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:singleLine="true"
+        android:id="@+id/edtSenha"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:id="@+id/btnLogin"
+            android:onClick=""
+            android:text="@string/logar"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:id="@+id/btnCadastro"
+            android:text="@string/registrar_se"/>
+
+    </LinearLayout>
+</LinearLayout>
